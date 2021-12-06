@@ -3,8 +3,39 @@ package com.company;
 import animals.Camel;
 import interfaces.Transfer;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Main {
+
     public static void main(String[] args) {
+
+        {
+          int animals[] = new int [0];
+         try {
+
+             System.out.println("Подсчет животных");
+             animals[2] = 1;
+         } catch (ArrayIndexOutOfBoundsException e){
+             System.out.println("Ошибка! Вы ввели больше одного животного!");
+         }
+
+
+        }
+
+
+        {
+            File file = new File("Dog");
+
+            try {
+                Scanner scanner = new Scanner(file);
+            } catch (FileNotFoundException e) {
+                System.out.println("Ошибка, такого файла не существует!");
+            }
+
+        }
+
         Train train = new Train();
         train.transfer(100, "Некрасовку");
         train.fillup(500);
@@ -44,4 +75,8 @@ public class Main {
         }
 
     }
+
+
+
+
 }
